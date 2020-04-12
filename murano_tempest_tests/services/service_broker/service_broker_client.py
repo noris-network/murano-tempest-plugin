@@ -32,7 +32,8 @@ class ServiceBrokerClient(rest_client.RestClient):
             auth_provider,
             CONF.service_broker.catalog_type,
             CONF.identity.region,
-            endpoint_type=CONF.service_broker.endpoint_type)
+            endpoint_type=CONF.service_broker.endpoint_type,
+            ca_certs=CONF.identity.ca_certificates_file)
         self.build_interval = CONF.service_broker.build_interval
         self.build_timeout = CONF.service_broker.build_timeout
         self.headers = self._generate_headers(auth_provider)

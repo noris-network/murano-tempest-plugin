@@ -33,7 +33,9 @@ class ApplicationCatalogClient(rest_client.RestClient):
             auth_provider,
             CONF.application_catalog.catalog_type,
             CONF.identity.region,
-            endpoint_type=CONF.application_catalog.endpoint_type)
+            endpoint_type=CONF.application_catalog.endpoint_type,
+            ca_certs=CONF.identity.ca_certificates_file
+            )
         self.build_interval = CONF.application_catalog.build_interval
         self.build_timeout = CONF.application_catalog.build_timeout
 

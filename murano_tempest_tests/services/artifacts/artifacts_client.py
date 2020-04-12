@@ -32,7 +32,8 @@ class ArtifactsClient(rest_client.RestClient):
             auth_provider,
             CONF.artifacts.catalog_type,
             CONF.identity.region,
-            endpoint_type=CONF.artifacts.endpoint_type)
+            endpoint_type=CONF.artifacts.endpoint_type,
+            ca_certs=CONF.identity.ca_certificates_file)
         self.build_interval = CONF.artifacts.build_interval
         self.build_timeout = CONF.artifacts.build_timeout
 
